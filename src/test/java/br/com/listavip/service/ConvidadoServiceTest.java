@@ -11,8 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -39,6 +38,6 @@ public class ConvidadoServiceTest {
 
     @Test
     public void testFindByName() {
-        assertEquals(convidadoService.obterPorNome("anA").getNome(), convidado.getNome());
+        assertEquals(convidadoService.obterPorNome("anA").get(0).getNome(), convidado.getNome());
     }
 }

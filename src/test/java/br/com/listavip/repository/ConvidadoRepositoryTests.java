@@ -25,12 +25,13 @@ public class ConvidadoRepositoryTests {
         convidadoRepository.save(convidado1);
         Optional<Convidado> convidado2 = convidadoRepository.findById(1L);
         assertNotNull(convidado2);
+        assertEquals(convidado1.getNome(), convidado2.get().getNome());
     }
 
     @Test
     public void testFindByName() {
         Convidado convidado1 = new Convidado("ana", "rafael@r.com.br", "123");
         convidadoRepository.save(convidado1);
-        assertEquals(convidadoRepository.findByNomeIgnoreCase("Ana").getNome(), convidado1.getNome());
+        assertEquals(convidado1.getNome(),convidadoRepository.findByNomeIgnoreCase("Ana").get(0).getNome());
     }
 }

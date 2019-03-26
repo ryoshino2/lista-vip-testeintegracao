@@ -6,6 +6,7 @@ import br.com.listavip.model.Convidado;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,11 +27,17 @@ public class ConvidadoService {
         return convidadoRepository.findById(id);
     }
 
-    public Convidado obterPorNome(String nome){
+    public List<Convidado> obterPorNome(String nome){
         return convidadoRepository.findByNomeIgnoreCase(nome);
     }
 
     public void salvar(Convidado convidado){
-        convidadoRepository.save(convidado);
+        if(convidadoRepository.findByNomeIgnoreCase(convidado.getNome()).size()>0){
+            System.out.println("Entrou, não deveria salvar");
+        }
+        else{
+            System.out.println("Entrou, passou direto");
+            convidadoRepository.save(convidado);
+        }
     }
 }

@@ -1,13 +1,14 @@
 package br.com.listavip.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import br.com.listavip.repository.ConvidadoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 public class Convidado {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -62,4 +63,5 @@ public class Convidado {
     public int hashCode() {
         return Objects.hash(nome, email, telefone);
     }
+
 }

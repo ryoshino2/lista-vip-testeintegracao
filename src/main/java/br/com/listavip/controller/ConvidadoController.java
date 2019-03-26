@@ -31,14 +31,13 @@ public class ConvidadoController {
     }
 
     @PostMapping(value = "salvar")
-    public ModelAndView salvar(@RequestParam("nome") String nome, @RequestParam("email")String email,
-                               @RequestParam("telefone") String telefone){
+    public ModelAndView salvar(Convidado convidado){
 
         ModelAndView modelAndView = new ModelAndView("listaconvidados");
-        Convidado novoConvidado = new Convidado(nome, email, telefone);
-        convidadoService.salvar(novoConvidado);
 
-        new EmailService().enviar(nome, email);
+        convidadoService.salvar(convidado);
+
+        new EmailService().enviar(convidado.getNome(), convidado.getEmail());
 
         Iterable<Convidado> convidados = convidadoService.obterTodos();
         modelAndView.addObject("convidados", convidados);
@@ -57,7 +56,7 @@ public class ConvidadoController {
     @GetMapping("/{nome}")
     public ModelAndView findByName(@PathVariable("nome") String nome){
         ModelAndView modelAndView = new ModelAndView("/listaconvidados");
-        Convidado convidados = convidadoService.obterPorNome(nome);
+        Iterable<Convidado> convidados = convidadoService.obterPorNome(nome);
         modelAndView.addObject("convidados", convidados);
 
         return modelAndView;

@@ -4,8 +4,10 @@ import br.com.listavip.model.Convidado;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface ConvidadoRepository extends CrudRepository<Convidado, Long> {
-    Convidado findByNomeIgnoreCase(String nome);
+    List<Convidado> findByNomeIgnoreCase(String nome);
 
 }
