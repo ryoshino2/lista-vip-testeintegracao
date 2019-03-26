@@ -1,4 +1,4 @@
-package net.guides.springboot2.springboottestingexamples;
+package br.com.listavip;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

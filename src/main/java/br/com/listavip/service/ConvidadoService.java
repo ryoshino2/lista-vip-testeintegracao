@@ -1,8 +1,8 @@
-package net.guides.springboot2.springboottestingexamples.service;
+package br.com.listavip.service;
 
 
-import net.guides.springboot2.springboottestingexamples.model.Convidado;
-import net.guides.springboot2.springboottestingexamples.repository.ConvidadoRepository;
+import br.com.listavip.repository.ConvidadoRepository;
+import br.com.listavip.model.Convidado;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

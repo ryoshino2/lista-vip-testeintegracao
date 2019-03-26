@@ -1,4 +1,4 @@
-package net.guides.springboot2.springboottestingexamples;
+package br.com.listavip;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

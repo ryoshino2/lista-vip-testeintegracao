@@ -1,6 +1,6 @@
-package net.guides.springboot2.springboottestingexamples.repository;
+package br.com.listavip.repository;
 
-import net.guides.springboot2.springboottestingexamples.model.Convidado;
+import br.com.listavip.model.Convidado;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

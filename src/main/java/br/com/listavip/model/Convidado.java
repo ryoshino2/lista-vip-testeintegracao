@@ -1,4 +1,4 @@
-package net.guides.springboot2.springboottestingexamples.model;
+package br.com.listavip.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
